@@ -24,7 +24,9 @@ public class ProductPage {
 
     }
 
-    //Web Elements 
+    // =========================
+    // Web Elements
+    // =========================
 
     // Search Box
     @FindBy(id = "searchInput")
@@ -54,7 +56,23 @@ public class ProductPage {
     @FindBy(className = "cart-item-remove")
     WebElement btnDelete;
 
-    // ===================== Methods =====================
+    // =========================
+    // NEW ELEMENTS FOR ASSERTIONS
+    // =========================
+
+    // Product Name
+    @FindBy(className = "cart-item-name")
+    WebElement cartProductName;
+
+    @FindBy(className = "cart-col-price")
+    WebElement productPrice;
+
+    @FindBy(xpath = "//*[contains(text(),'Your cart is empty')]")
+    WebElement emptyCartMessage;
+
+    // =========================
+    // Methods
+    // =========================
 
     // Search Product
     public void searchProduct(String product) {
@@ -102,9 +120,11 @@ public class ProductPage {
     }
 
     // Open Cart
-    public void clickCart() {
+    public void clickCart() throws Exception {
 
         cartIcon.click();
+
+        Thread.sleep(3000);
 
     }
 
@@ -126,7 +146,7 @@ public class ProductPage {
 
     }
 
-    // Existing Reusable Method 
+    // Existing Reusable Method
 
     public void addProduct(String productName) throws Exception {
 
@@ -147,7 +167,9 @@ public class ProductPage {
 
     }
 
-    //  NEW METHODS FOR TC004 
+    // =========================
+    // NEW METHODS FOR TC004
+    // =========================
 
     // Click Product by Position
     public void clickProduct(int index) {
@@ -172,6 +194,33 @@ public class ProductPage {
         goToHomePage();
 
         Thread.sleep(3000);
+
+    }
+
+    // =========================
+    // ASSERTION METHODS
+    // =========================
+
+    // Verify Product Exists
+    public boolean isProductDisplayed() {
+
+        return cartProductName.isDisplayed();
+
+    }
+
+    // Get Product Price
+    public String getProductPrice() {
+
+        return productPrice.getText();
+
+    }
+
+    
+
+    // Verify Empty Cart
+    public boolean isCartEmpty() {
+
+        return emptyCartMessage.isDisplayed();
 
     }
 

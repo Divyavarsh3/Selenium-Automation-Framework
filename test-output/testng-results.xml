@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-07-02T12:36:57 IST" name="Default suite" finished-at="2026-07-02T12:38:52 IST" duration-ms="114491">
+  <suite started-at="2026-07-03T15:08:49 IST" name="Default suite" finished-at="2026-07-03T15:10:35 IST" duration-ms="106743">
     <groups>
     </groups>
-    <test started-at="2026-07-02T12:36:57 IST" name="Default test" finished-at="2026-07-02T12:38:52 IST" duration-ms="114491">
-      <class name="testcases.TC004_MultipleProducts">
-        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.TC004_MultipleProducts@2d3379b4]" started-at="2026-07-02T12:36:58 IST" name="setup" finished-at="2026-07-02T12:37:33 IST" duration-ms="35403" status="PASS">
+    <test started-at="2026-07-03T15:08:49 IST" name="Default test" finished-at="2026-07-03T15:10:35 IST" duration-ms="106743">
+      <class name="testcases.TC005_Filter">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.TC005_Filter@2d3379b4]" started-at="2026-07-03T15:08:49 IST" name="setup" finished-at="2026-07-03T15:09:14 IST" duration-ms="25630" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="multipleProductsTest()[pri:0, instance:testcases.TC004_MultipleProducts@2d3379b4]" started-at="2026-07-02T12:37:33 IST" name="multipleProductsTest" finished-at="2026-07-02T12:38:42 IST" duration-ms="68780" status="PASS">
+        <test-method signature="filterTest()[pri:0, instance:testcases.TC005_Filter@2d3379b4]" started-at="2026-07-03T15:09:14 IST" name="filterTest" finished-at="2026-07-03T15:10:25 IST" duration-ms="70606" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- multipleProductsTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testcases.TC004_MultipleProducts@2d3379b4]" started-at="2026-07-02T12:38:42 IST" name="tearDown" finished-at="2026-07-02T12:38:52 IST" duration-ms="10263" status="PASS">
+        </test-method> <!-- filterTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testcases.TC005_Filter@2d3379b4]" started-at="2026-07-03T15:10:25 IST" name="tearDown" finished-at="2026-07-03T15:10:35 IST" duration-ms="10438" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- testcases.TC004_MultipleProducts -->
+      </class> <!-- testcases.TC005_Filter -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

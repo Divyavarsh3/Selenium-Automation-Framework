@@ -1,5 +1,6 @@
 package testcases;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import base.BaseClass;
@@ -15,14 +16,14 @@ public class TC004_MultipleProducts extends BaseClass {
         Thread.sleep(5000);
         System.out.println("Website Opened");
 
-        //  Product 1 
+        // Product 1
         pp.clickProduct(1);
         System.out.println("First Product Opened");
 
         pp.addCurrentProduct();
         System.out.println("First Product Added");
 
-        //  Product 2 
+        // Product 2
 
         Thread.sleep(3000);
 
@@ -32,7 +33,7 @@ public class TC004_MultipleProducts extends BaseClass {
         pp.addCurrentProduct();
         System.out.println("Second Product Added");
 
-        //  Product 3 
+        // Product 3
 
         Thread.sleep(3000);
 
@@ -42,7 +43,7 @@ public class TC004_MultipleProducts extends BaseClass {
         pp.addCurrentProduct();
         System.out.println("Third Product Added");
 
-        //  Open Cart 
+        // Open Cart
 
         Thread.sleep(3000);
 
@@ -51,28 +52,46 @@ public class TC004_MultipleProducts extends BaseClass {
 
         Thread.sleep(5000);
 
-        //  Delete Product 1 
+        // Verify Product Exists in Cart
+        Assert.assertTrue(pp.isProductDisplayed(),
+                "Products are not displayed in the cart");
+
+        System.out.println("Products Verified Successfully");
+
+        // Verify Product Price Displayed
+        Assert.assertFalse(pp.getProductPrice().isEmpty(),
+                "Product Price is not displayed");
+
+        System.out.println("Product Price Verified");
+
+        // Delete Product 1
 
         pp.deleteProduct();
         System.out.println("First Product Deleted");
 
         Thread.sleep(3000);
 
-        //  Delete Product 2
+        // Delete Product 2
 
         pp.deleteProduct();
         System.out.println("Second Product Deleted");
 
         Thread.sleep(3000);
 
-        //  Delete Product 3 
+        // Delete Product 3
 
         pp.deleteProduct();
         System.out.println("Third Product Deleted");
 
         Thread.sleep(3000);
 
-        //  Return Home 
+        // Verify Cart Empty
+        Assert.assertTrue(pp.isCartEmpty(),
+                "Cart is not empty");
+
+        System.out.println("Cart Verified Empty");
+
+        // Return Home
 
         pp.goToHomePage();
         System.out.println("Returned To Home Page");

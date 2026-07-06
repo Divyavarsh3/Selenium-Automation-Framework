@@ -1,5 +1,6 @@
 package testcases;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import base.BaseClass;
@@ -50,11 +51,28 @@ public class TC003_Product extends BaseClass {
 
         Thread.sleep(5000);
 
+        // Verify Product is Added to Cart
+        Assert.assertTrue(pp.isProductDisplayed(),
+                "Product is not displayed in the cart");
+
+        System.out.println("Product Verified Successfully");
+
+        // Verify Product Price and Subtotal
+        Assert.assertFalse(pp.getProductPrice().isEmpty(),
+                "Product Price is not displayed");
+
+        System.out.println("Product Price Verified");
         // Delete Product
         pp.deleteProduct();
         System.out.println("Product Deleted");
 
         Thread.sleep(3000);
+
+        // Verify Cart is Empty
+        Assert.assertTrue(pp.isCartEmpty(),
+                "Cart is not empty");
+
+        System.out.println("Cart Verified Empty");
 
         // Return To Home Page
         pp.goToHomePage();

@@ -30,7 +30,7 @@ public class BaseClass {
         driver.get("https://luma.enablementadobe.com/");
 
         // Wait for website to load completely
-        Thread.sleep(20000);
+        Thread.sleep(10000);
 
     }
 
